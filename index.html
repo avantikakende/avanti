@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Managment system</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Group Managment system</h1>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Group Name </th>
+          <th>Date</th>
+          <th>Information</th>
+          <th>Members</th>
+        </tr>
+      </thead>
+      <tbody id="groupTableBody">
+        <!-- Table rows will be added dynamically using JavaScript -->
+      </tbody>
+    </table>
+
+    <form id="Group Managment system">
+      <label for="groupName" firefly                                                                                                                                                                                                                                        >Group Name:</label>
+      <input type="text" id="groupName" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="information">Information:</label>
+      <textarea id="information" required></textarea>
+
+      <label for="members">Members:</label>
+      <input type="text" id="members" required>
+
+      <button type="button" onclick="addnew()">Add Deployment</button>
+    </form>
+  </main>
+
+  <script>
+    function addnew() {
+      var groupName = document.getElementById('groupName').value;
+      var date = document.getElementById('date').value;
+      var information = document.getElementById('information').value;
+      var members = document.getElementById('members').value;
+
+      var tableBody = document.getElementById('groupTableBody');
+
+      var newRow = tableBody.insertRow(tableBody.rows.length);
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+      var cell3 = newRow.insertCell(2);
+      var cell4 = newRow.insertCell(3);
+
+      cell1.innerHTML = groupName;
+      cell2.innerHTML = date;
+      cell3.innerHTML = information;
+      cell4.innerHTML = members;
+
+      // Clear the form fields
+      document.getElementById('groupName').value = '';
+      document.getElementById('date').value = '';
+      document.getElementById('information').value = '';
+      document.getElementById('members').value = '';
+    }
+  </script>
+
+</body>
+</html>
